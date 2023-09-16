@@ -130,6 +130,11 @@ dd {
   color: #fff;
   border-color: #0061fe;
 }
+.btn-primary3 {
+  background: #4CAF50;
+  color: #fff;
+  border-color: #282828;
+}
 .btn-primary:active, .btn-primary:hover, .btn-primary:focus, .btn-primary.focus, .btn-primary.active {
   color: #fff;
   background: #282828 !important;
