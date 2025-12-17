@@ -7,7 +7,7 @@
  // GITHUB: https://github.com/themefisher/
 -->
 
-<html lang="en">
+<html lang="zxx">
 
 <head>
   <meta charset="utf-8">
@@ -15,6 +15,9 @@
 
   <!-- mobile responsive meta -->
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+  <!-- theme meta -->
+  <meta name="theme-name" content="godocs-bulma" />
   
   <!-- ** Plugins Needed for the Project ** -->
   <!-- plugins -->
@@ -28,46 +31,46 @@
   <link rel="icon" href="images/favicon.ico" type="image/x-icon">
 
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-GDHNBYXTZ0"></script>
-<script>
-   window.dataLayer = window.dataLayer || [];
-   function gtag(){dataLayer.push(arguments);}
-   gtag('js', new Date());
 
-   gtag('config', 'G-GDHNBYXTZ0');
-</script>
 <body>
 
-<nav aria-label="main navigation" class="navbar is-sticky-top navigation" role="navigation">
+
+<nav class="is-sticky-top navbar navigation" role="navigation" aria-label="main navigation">
    <div class="container">
       <div class="navbar-brand">
          <a class="navbar-item" href="index.html">
-            <img alt="godocs" class="img-fluid" src="images/nsi-logo.jpg" width="155px">
+            <img class="img-fluid" src="images/logo.png" alt="godocs" width="155px">
          </a>
-
-         <a aria-expanded="false" class="navbar-burger burger" data-target="navbar-links" role="button">
+   
+         <a role="button" class="navbar-burger burger" aria-expanded="false" data-target="navbar-links">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
          </a>
       </div>
-
-      <div class="navbar-menu" id="navbar-links">
+   
+      <div id="navbar-links" class="navbar-menu">
          <div class="navbar-start ml-auto">
-            <a class="navbar-item" href="index.html">HOME</a>
-            <a class="navbar-item" href="USA-IT-directors.html">IT MANAGERS</a>
-            <a class="navbar-item" href="nsi-ai-it-on-demand-business-services.html">IT ON-DEMAND</a>
-            <a class="navbar-item" href="nsi-portfolio.html">OUR WORK</a>
-            <a class="navbar-item" href="contact.html">PRICING</a>
+            <a class="navbar-item" href="index.html">Home</a>
+            <a class="navbar-item" href="search.html">Search Page</a>
          </div>
-
+   
          <div class="navbar-end ml-0">
             <div class="navbar-item py-0">
-               <a href="contact.html" class="btn btn-sm btn-primary ml-4">(844) 654-8088 </a>
+               <form class="search-wrapper hide-on-desktop my-3" class="search-wrapper" action="search.html">
+                  <input id="search-by" name="s" type="search" class="input" placeholder="Search here ...">
+                  <button class="border-0 bg-white p-3" type="submit"><i class="ti-search"></i></button>
+               </form>
+
+               <a href="changelog.html" class="btn btn-sm btn-outline-primary ml-4">changelog</a>
+               <a href="contact.html" class="btn btn-sm btn-primary ml-4">contact</a>
             </div>
          </div>
       </div>
+      <form class="search-wrapper is-hidden show-on-desktop" class="search-wrapper" action="search.html">
+         <input id="search-by" name="s" type="search" class="input" placeholder="Search here ...">
+         <button class="border-0 bg-white p-3" type="submit"><i class="ti-search"></i></button>
+      </form>
    </div>
 </nav>
 
@@ -76,56 +79,78 @@
       <div class="columns is-desktop is-justify-content-center">
          <div class="column is-8-desktop">
             <div class="p-6 shadow rounded content">
-               <h2 class="section-title">Get Started With A Free Consultation</h2>
-               <h4 class="section-sm">Call (844) 654-8088</h4>
-               <p>At NSI, we prioritize exceptional customer support to ensure your satisfaction every step of the way. Our dedicated customer support team is here to assist you with any inquiries, concerns, or technical issues you may encounter. We value your time and strive to provide timely and effective assistance. Before reaching out to our support team, we encourage you to explore our comprehensive knowledge base, where you can find helpful resources, guides, and frequently asked questions. If you need further assistance, please don't hesitate to contact us through the convenient contact form below. We are committed to delivering a seamless customer experience and look forward to serving you.</p>
-               <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-               <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
-               <!-- Google Calendar Appointment Scheduling begin -->
-               <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ01Vau6D6wIWTRO8h-G6ldiQUQOAofQLIPgKNkdiCNLzhIN0DG_Aqfz5mhxqhiQpsLeBcMmyqsi?gv=true" style="border: 0" width="100%" height="600" frameborder="0"></iframe>
-               <!-- end Google Calendar Appointment Scheduling -->
+               <h2 class="section-title">Got Any Questions</h2>
+               <form method="POST" action="#">
+                  <div class="columns is-multiline">
+                     <div class="form-group column is-6-desktop">
+                        <label for="fname">First Name</label>
+                        <input type="text" class="input" id="fname" name="fname" placeholder="Your First Name"
+                           required>
+                     </div>
+                     <div class="form-group column is-6-desktop">
+                        <label for="lname">Last Name</label>
+                        <input type="text" class="input" id="lname" name="lname" placeholder="Your Last Name">
+                     </div>
+                     <div class="form-group column is-12">
+                        <label for="email">Email</label>
+                        <input type="email" class="input" id="email" name="email" placeholder="Your Email Address"
+                           required>
+                     </div>
+                     <div class="form-group column is-12">
+                        <label for="reason">Reason of Contact</label>
+                        <select id="reason" class="input custom-select" name="reason" required>
+                           <option selected disabled>Choose Your Reason</option>
+                           <option value="business">Business</option>
+                           <option value="ticket">Ticket</option>
+                           <option value="project">Project</option>
+                        </select>
+                     </div>
+                     <div class="form-group column is-12">
+                        <label for="message">Start Writing From Here</label>
+                        <textarea name="message" id="message" class="input"
+                           placeholder="Your Text here ..."></textarea>
+                     </div>
+                     <div class="column is-12">
+                        <button type="submit" class="btn btn-primary">Send</button>
+                     </div>
+                  </div>
+               </form>
             </div>
          </div>
       </div>
    </div>
 </section>
+
 <footer>
    <div class="container">
       <div class="columns is-multiline is-align-items-center border-bottom py-5">
          <div class="column is-4-desktop is-12-tablet">
             <ul class="list-inline footer-menu has-text-centered has-text-left-desktop">
-               <li class="list-inline-item"><a href="https://ai.netstudiosinc.com/about/">About</a></li>
-               <li class="list-inline-item"><a href="https://ai.netstudiosinc.com/tag/nsi-it-pro-network/">IT Pro Network</a></li>
-               <li class="list-inline-item"><a href="https://ai.netstudiosinc.com/tag/nsi-remote-workspace/">We're Hiring!</a></li>
+               <li class="list-inline-item"><a href="changelog.html">Changelog</a></li>
+               <li class="list-inline-item"><a href="contact.html">contact</a></li>
+               <li class="list-inline-item"><a href="search.html">Search</a></li>
             </ul>
          </div>
          <div class="column is-4-desktop is-12-tablet">
             <a class="navbar-brand is-justify-content-center" href="index.html">
-               <img alt="NET Studios Logo | AI job marketplace" class="img-fluid" src="images/logo-nsi-2foot.png"
-                    width="100px">
+               <img class="img-fluid" src="images/logo.png" alt="Hugo documentation theme">
             </a>
          </div>
          <div class="column is-4-desktop is-12-tablet">
             <ul class="list-inline social-icons has-text-right-desktop has-text-centered">
-               <li class="list-inline-item"><a href="https://www.facebook.com/NETSTUDIOS/"><i
-                       class="ti-facebook"></i></a></li>
-               <li class="list-inline-item"><a href="https://twitter.com/NetStudiosInc"><i
-                       class="ti-twitter-alt"></i></a></li>
-               <li class="list-inline-item"><a
-                       href="http://143.244.159.29/s/nsi-changing-the-way-people-work-and-live/"><i
-                       class="ti-github"></i></a></li>
-               <li class="list-inline-item"><a href="https://linkedin.com/company/netstudiosinc"><i
-                       class="ti-linkedin"></i></a></li>
+               <li class="list-inline-item"><a href="#"><i class="ti-facebook"></i></a></li>
+               <li class="list-inline-item"><a href="#"><i class="ti-twitter-alt"></i></a></li>
+               <li class="list-inline-item"><a href="#"><i class="ti-github"></i></a></li>
+               <li class="list-inline-item"><a href="#"><i class="ti-linkedin"></i></a></li>
             </ul>
          </div>
       </div>
       <div class="py-4 has-text-centered">
-         <small class="text-light"> (844) 654-8088 | Copyright© 2023 | IT AI Design &amp; Developed by <a
-                 href="https://www.netstudiosinc.com.com">Net Studios Inc.</a><em>In partnership with</em></small><p>
-         <!--<a href="https://business.sharpusa.com/About-Sharp-B2B"><img alt="image" src="images/sharp.png" width="10%"></a></p>-->
+         <small class="text-light">Copyright © 2020 - Design &amp; Developed by <a href="https://themefisher.com">themefisher</a></small>
       </div>
    </div>
 </footer>
+
 <!-- plugins -->
 <script src="plugins/jQuery/jquery.min.js"></script>
 <script src="plugins/masonry/masonry.min.js"></script>
